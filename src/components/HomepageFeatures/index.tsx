@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
+import '../../css/index.css';
 import styles from './styles.module.css';
 
 type FeatureItem = {
