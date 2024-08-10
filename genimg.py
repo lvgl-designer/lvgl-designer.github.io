@@ -11,13 +11,15 @@ Usage:
     <version> in format of vX.Y.Z, e.g.:
     ./genimg v0.0.30
 """
+REPO = "registry.cn-hangzhou.aliyuncs.com/devlab"
+IMAGE = "lvgl-homepage"
 
-docker_image_name = "registry.cn-hangzhou.aliyuncs.com/devlab/anyui-homepage"
+docker_image_name = f"{REPO}/{IMAGE}"
 
 step: int = 0
 
 def git_clone(version: str):
-    return os.system("git clone ~/src/hmi/lvgl-guider/.git {}".format(version))
+    return os.system("git clone ~/src/hmi/lvgl-homepage/.git {}".format(version))
 
 
 def git_checkout():
