@@ -8,10 +8,15 @@ import clsx from 'clsx';
 import MacIcon from '@site/static/img/anyui-mac.png';
 import WebIcon from '@site/static/img/anyui-web.png';
 import Wechat from '@site/static/img/wechat.png';
+import { useState } from 'react';
+import { DownloadDialog } from '../components/DownloadDialog';
 import styles from './index.module.css';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const [open, setOpen] = useState(false);
+  const [link, setLink] = useState('');
+  const [os, setOs] = useState('');
 
   return (
     <header
@@ -28,14 +33,26 @@ function HomepageHeader() {
         <div className={clsx(styles.buttons, 'space-x-5')}>
           <Link
             className="button button--secondary button--lg space-x-2 flex items-center"
-            to="https://pan.baidu.com/s/1IBW-Flz_OahJNJlg1OKq0g"
+            onClick={() => {
+              setOs('Mac');
+              setLink(
+                'https://pan.baidu.com/s/1k9anft0tYUtflH8D0tLWPg?pwd=a5ug',
+              );
+              setOpen(true);
+            }}
           >
             <span>Mac</span>
             <i className="iconfont icon-download text-[20px]" />
           </Link>
           <Link
             className="button button--secondary button--lg space-x-2 flex items-center"
-            to="https://pan.baidu.com/s/1IBW-Flz_OahJNJlg1OKq0g"
+            onClick={() => {
+              setOs('Windows');
+              setLink(
+                'https://pan.baidu.com/s/1QAcZyVVV_kh4_IAV5KhrzA?pwd=2m6b',
+              );
+              setOpen(true);
+            }}
           >
             <span>Windows</span>
             <i className="iconfont icon-download text-[20px]" />
@@ -48,6 +65,18 @@ function HomepageHeader() {
           </a>
           <a className="button button--secondary button--lg disabled">Linux</a>
         </div>
+        <DownloadDialog
+          open={open}
+          onClose={() => {}}
+          content={
+            <div className="m-2 space-y-2">
+              <div>{os}版本下载由百度网盘提供支持</div>
+              <Link className="button button--primary" to={link}>
+                前往下载
+              </Link>
+            </div>
+          }
+        />
       </div>
     </header>
   );
@@ -70,7 +99,7 @@ export default function Home(): JSX.Element {
           <span className="text-2xl text--bold">
             跨平台，支持Mac、Windows和Web
           </span>
-          <p>根据您的操作系统选择对应版本，或者直接在线尝试吧</p>
+          <p>根据您的操作系统选择对应版本，或者试试免安装的Web版本吧</p>
         </div>
         <div className="flex justify-center items-center m-10">
           <img className="w-1/3 h-2/3" src={MacIcon} />
@@ -80,8 +109,8 @@ export default function Home(): JSX.Element {
       <main>
         <HomepageFeatures />
       </main>
-      <div className="flex flex-col justify-center items-center m-10">
-        <span>欢迎联系我，添加请备注</span>
+      <div className="flex flex-col justify-center items-center m-10 space-y-2">
+        <span>有问题欢迎联系我，添加请备注</span>
         <img src={Wechat} width={200} height={200} />
       </div>
     </Layout>
