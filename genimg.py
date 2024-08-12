@@ -18,6 +18,7 @@ docker_image_name = f"{REPO}/{IMAGE}"
 
 step: int = 0
 
+
 def git_clone(version: str):
     return os.system("git clone ~/src/hmi/lvgl-homepage/.git {}".format(version))
 
@@ -38,11 +39,15 @@ def chdir(version: str):
 
 
 def check_versions(version):
-    package = json.load(open('package.json', 'r'))
-    if (package['version'] != version[1:]):
-      print("Version mismatch: package.json version is %s, but %s is given" % (package['version'], version[1:]))
-      return True
+    package = json.load(open("package.json", "r"))
+    if package["version"] != version[1:]:
+        print(
+            "Version mismatch: package.json version is %s, but %s is given"
+            % (package["version"], version[1:])
+        )
+        return True
     return False
+
 
 def install_packages():
     global step
@@ -121,9 +126,7 @@ def start_process(version: str):
         # or git_checkout()
         # check_versions(version)
         # or install_packages()
-        build_image()
-        or docker_genimg(version)
-        or docker_pushimg(version)
+        build_image() or docker_genimg(version) or docker_pushimg(version)
         # or git_tag(version)
         # or git_pushtags()
     )
@@ -136,9 +139,8 @@ def main(version: str):
 if __name__ == "__main__":
     args = sys.argv
     if len(args) != 2:
-        os.system(
-            f"docker images | grep {docker_image_name}:v"
-        )
+        cmd = f"docker images | grep {docker_image_name}"
+        os.system(cmd)
         print(usage)
     else:
         main(args[1])
