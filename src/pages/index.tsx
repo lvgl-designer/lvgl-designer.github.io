@@ -10,6 +10,7 @@ import WebIcon from '@site/static/img/anyui-web.png';
 import Wechat from '@site/static/img/wechat.png';
 import { useState } from 'react';
 import { DownloadDialog } from '../components/DownloadDialog';
+import '../index.css';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -30,40 +31,44 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle p-5">{siteConfig.tagline}</p>
-        <div className={clsx(styles.buttons, 'space-x-5')}>
-          <Link
+        <div
+          className={clsx(styles.buttons, 'flex flex-wrap items-center gap-5')}
+        >
+          <a
             className="button button--secondary button--lg space-x-2 flex items-center"
             onClick={() => {
               setOs('Mac');
               setLink(
-                'https://pan.baidu.com/s/1k9anft0tYUtflH8D0tLWPg?pwd=a5ug',
+                'https://pan.baidu.com/s/1Yi2E0hcRXz33SSUR_h9BXA?pwd=gkui',
               );
               setOpen(true);
             }}
           >
             <span>Mac</span>
             <i className="iconfont icon-download text-[20px]" />
-          </Link>
-          <Link
+          </a>
+          <a
             className="button button--secondary button--lg space-x-2 flex items-center"
             onClick={() => {
               setOs('Windows');
               setLink(
-                'https://pan.baidu.com/s/1QAcZyVVV_kh4_IAV5KhrzA?pwd=2m6b',
+                'https://pan.baidu.com/s/1kvcqVQ26wi5h7edjX8ZY1Q?pwd=wza4',
               );
               setOpen(true);
             }}
           >
             <span>Windows</span>
             <i className="iconfont icon-download text-[20px]" />
-          </Link>
+          </a>
           <a
-            className="button button--secondary button--lg"
+            className="button button--secondary button--lg space-x-2 flex items-center"
             onClick={() => window.open('/playground')}
           >
-            Web
+            <span>Web</span>
           </a>
-          <a className="button button--secondary button--lg disabled">Linux</a>
+          <a className="button button--secondary button--lg space-x-2 flex items-center disabled">
+            <span>Linux</span>
+          </a>
         </div>
         <DownloadDialog
           open={open}
