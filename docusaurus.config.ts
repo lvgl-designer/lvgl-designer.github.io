@@ -3,8 +3,8 @@ import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
 const config: Config = {
-  title: 'Anyui - Designer for LVGL HMI',
-  tagline: '免费的LVGL人机界面设计工具',
+  title: 'Anyui - GUI Designer for LVGL HMI',
+  tagline: 'LVGL嵌入式开源图形库GUI人机界面设计工具',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
