@@ -39,7 +39,7 @@ function HomepageHeader() {
             onClick={() => {
               setOs('Mac');
               setLink(
-                'https://pan.baidu.com/s/1Yi2E0hcRXz33SSUR_h9BXA?pwd=gkui',
+                'https://pan.baidu.com/s/1ezHpfubikzRacm0QgeMU6A?pwd=5f1b',
               );
               setOpen(true);
             }}
@@ -52,7 +52,7 @@ function HomepageHeader() {
             onClick={() => {
               setOs('Windows');
               setLink(
-                'https://pan.baidu.com/s/1kvcqVQ26wi5h7edjX8ZY1Q?pwd=wza4',
+                'https://pan.baidu.com/s/1E3EmYqSEMExLvDPp6GN7LQ?pwd=idbj',
               );
               setOpen(true);
             }}
