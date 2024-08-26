@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
+title: 快速开始
+description: LVGL嵌入式图形库GUI设计工具快速开始
 ---
 
-
-# 快速开始
 
 ## **应用功能区介绍**
 

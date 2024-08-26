@@ -1,4 +1,3 @@
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
@@ -8,16 +7,12 @@ import clsx from 'clsx';
 import MacIcon from '@site/static/img/anyui-mac.png';
 import WebIcon from '@site/static/img/anyui-web.png';
 import Wechat from '@site/static/img/wechat.png';
-import { useState } from 'react';
-import { DownloadDialog } from '../components/DownloadDialog';
+import { DownloadLink } from '../components/DownloadLink';
 import '../index.css';
 import styles from './index.module.css';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const [open, setOpen] = useState(false);
-  const [link, setLink] = useState('');
-  const [os, setOs] = useState('');
 
   return (
     <header
@@ -31,57 +26,7 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle p-5">{siteConfig.tagline}</p>
-        <div
-          className={clsx(styles.buttons, 'flex flex-wrap items-center gap-5')}
-        >
-          <a
-            className="button button--secondary button--lg space-x-2 flex items-center"
-            onClick={() => {
-              setOs('Mac');
-              setLink(
-                'https://pan.baidu.com/s/1ezHpfubikzRacm0QgeMU6A?pwd=5f1b',
-              );
-              setOpen(true);
-            }}
-          >
-            <span>Mac</span>
-            <i className="iconfont icon-download text-[20px]" />
-          </a>
-          <a
-            className="button button--secondary button--lg space-x-2 flex items-center"
-            onClick={() => {
-              setOs('Windows');
-              setLink(
-                'https://pan.baidu.com/s/1E3EmYqSEMExLvDPp6GN7LQ?pwd=idbj',
-              );
-              setOpen(true);
-            }}
-          >
-            <span>Windows</span>
-            <i className="iconfont icon-download text-[20px]" />
-          </a>
-          <a
-            className="button button--secondary button--lg space-x-2 flex items-center"
-            onClick={() => window.open('/playground')}
-          >
-            <span>Web</span>
-          </a>
-          <a className="button button--secondary button--lg space-x-2 flex items-center disabled">
-            <span>Linux</span>
-          </a>
-        </div>
-        <DownloadDialog
-          open={open}
-          onClose={() => {}}
-          content={
-            <div className="m-2 space-y-2">
-              <div>{os}版本下载由百度网盘提供支持</div>
-              <Link className="button button--primary" to={link}>
-                前往下载
-              </Link>
-            </div>
-          }
-        />
+        <DownloadLink />
       </div>
     </header>
   );
@@ -92,7 +37,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      description="Anyui是一个基于LVGL嵌入式开源图形库的GUI人机界面设计工具，集设计、代码生成、编译运行、设备模拟于一体，旨在帮助开发者快速设计、开发、调试嵌入式设备的图形界面，并支持多种平台。"
     >
       <HomepageHeader />
       <div className="flex justify-center m-10">
@@ -105,6 +50,7 @@ export default function Home(): JSX.Element {
             跨平台，支持Mac、Windows和Web
           </span>
           <p>根据您的操作系统选择对应版本，或者试试免安装的Web版本吧</p>
+          <DownloadLink />
         </div>
         <div className="flex justify-center items-center m-10">
           <img className="w-1/3 h-2/3" src={MacIcon} />

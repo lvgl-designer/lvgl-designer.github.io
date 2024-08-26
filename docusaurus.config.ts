@@ -3,8 +3,8 @@ import type { Config } from '@docusaurus/types';
 import { themes as prismThemes } from 'prism-react-renderer';
 
 const config: Config = {
-  title: 'Anyui - GUI Designer for LVGL HMI',
-  tagline: 'LVGL嵌入式开源图形库GUI人机界面设计工具',
+  title: '基于LVGL嵌入式开源图形库的GUI人机交互HMI设计工具',
+  tagline: 'Anyui - GUI Designer for LVGL HMI',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -28,6 +28,17 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'keywords',
+        content:
+          'LVGL,HMI,人机交互,图形库,嵌入式图形库,图形界面设计,图形界面开发,嵌入式应用开发',
+      },
+    },
+  ],
 
   presets: [
     [
