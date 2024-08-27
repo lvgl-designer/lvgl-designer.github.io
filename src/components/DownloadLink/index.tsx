@@ -10,32 +10,33 @@ export const DownloadLink: FC = () => {
     <div className="my-4">
       <div className="flex flex-wrap justify-center items-center gap-5">
         <a
-          className="button button--secondary button--lg space-x-2 flex items-center"
+          className="button button--secondary button--lg rounded-full w-48 space-x-2 flex justify-center items-center"
           onClick={() => {
             setOs('Mac');
             setLink('https://pan.baidu.com/s/1ezHpfubikzRacm0QgeMU6A?pwd=5f1b');
             setOpen(true);
           }}
         >
+          <i className="iconfont icon-mac text-[20px]" />
           <span>Mac (x86)</span>
-          <i className="iconfont icon-download text-[20px]" />
         </a>
         <a
-          className="button button--secondary button--lg space-x-2 flex items-center"
+          className="button button--secondary button--lg rounded-full w-48 space-x-2 flex justify-center items-center"
           onClick={() => {
             setOs('Windows');
             setLink('https://pan.baidu.com/s/1E3EmYqSEMExLvDPp6GN7LQ?pwd=idbj');
             setOpen(true);
           }}
         >
+          <i className="iconfont icon-windows-fill text-[20px]" />
           <span>Windows</span>
-          <i className="iconfont icon-download text-[20px]" />
         </a>
         <a
-          className="button button--secondary button--lg space-x-2 flex items-center"
+          className="button button--secondary button--lg rounded-full w-48 space-x-2 flex justify-center items-center"
           onClick={() => window.open('/playground')}
         >
-          <span>Web</span>
+          <i className="iconfont icon-web text-[20px]" />
+          <span>Playground</span>
         </a>
         {/* <a className="button button--secondary button--lg space-x-2 flex items-center disabled">
           <span>Linux</span>
