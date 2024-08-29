@@ -38,6 +38,13 @@ const config: Config = {
           'LVGL,HMI,人机交互,图形库,嵌入式图形库,图形界面设计,图形界面开发,嵌入式应用开发',
       },
     },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'baidu-site-verification',
+        content: 'codeva-dXPCVjOQ7y',
+      },
+    },
   ],
 
   presets: [
