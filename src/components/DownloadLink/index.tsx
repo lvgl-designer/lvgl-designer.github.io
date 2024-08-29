@@ -13,7 +13,7 @@ export const DownloadLink: FC = () => {
           className="button button--secondary button--lg rounded-full w-48 space-x-2 flex justify-center items-center"
           onClick={() => {
             setOs('Mac');
-            setLink('https://pan.baidu.com/s/1ezHpfubikzRacm0QgeMU6A?pwd=5f1b');
+            setLink('https://pan.baidu.com/s/1bHc335Ozf-A43MSxRWAFiA?pwd=qpeh');
             setOpen(true);
           }}
         >
@@ -24,7 +24,7 @@ export const DownloadLink: FC = () => {
           className="button button--secondary button--lg rounded-full w-48 space-x-2 flex justify-center items-center"
           onClick={() => {
             setOs('Windows');
-            setLink('https://pan.baidu.com/s/1E3EmYqSEMExLvDPp6GN7LQ?pwd=idbj');
+            setLink('https://pan.baidu.com/s/1NxYMBPokDuAUScqLohf3Lg?pwd=ej9e');
             setOpen(true);
           }}
         >
