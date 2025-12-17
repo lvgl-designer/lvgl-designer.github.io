@@ -1,0 +1,1 @@
+const i="/img/anim/anim_mgr.jpg",m="/img/anim/anim_widget_create.jpg",_="/img/anim/anim_widget_edit.jpg",a="/img/anim/anim_widget_table.jpg",t="/img/anim/anim_widget_apply.jpg",g="/img/anim/anim_widget_apply2.jpg";export{i as _,m as a,_ as b,a as c,t as d,g as e};
